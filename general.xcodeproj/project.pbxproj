@@ -9,21 +9,22 @@
 /* Begin PBXBuildFile section */
 		FF07385A27650B6800315619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07385927650B6800315619 /* AppDelegate.swift */; };
 		FF07385C27650B6800315619 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07385B27650B6800315619 /* SceneDelegate.swift */; };
-		FF07385E27650B6800315619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07385D27650B6800315619 /* ViewController.swift */; };
 		FF07386127650B6900315619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF07385F27650B6900315619 /* Main.storyboard */; };
 		FF07386327650B7200315619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF07386227650B7200315619 /* Assets.xcassets */; };
 		FF07386627650B7200315619 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF07386427650B7200315619 /* LaunchScreen.storyboard */; };
+		FF07387227651AFD00315619 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07387127651AFC00315619 /* GameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF07385627650B6800315619 /* general.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = general.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF07385927650B6800315619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF07385B27650B6800315619 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF07385D27650B6800315619 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF07386027650B6900315619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF07386227650B7200315619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF07386527650B7200315619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF07386727650B7200315619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF07387027650E5800315619 /* general.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = general.entitlements; sourceTree = "<group>"; };
+		FF07387127651AFC00315619 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +57,40 @@
 		FF07385827650B6800315619 /* general */ = {
 			isa = PBXGroup;
 			children = (
-				FF07385927650B6800315619 /* AppDelegate.swift */,
-				FF07385B27650B6800315619 /* SceneDelegate.swift */,
-				FF07385D27650B6800315619 /* ViewController.swift */,
-				FF07385F27650B6900315619 /* Main.storyboard */,
+				FF07387027650E5800315619 /* general.entitlements */,
+				FF07386F27650C0200315619 /* Code */,
+				FF07386E27650BC800315619 /* Screen */,
+				FF07386D27650BA400315619 /* VC */,
 				FF07386227650B7200315619 /* Assets.xcassets */,
-				FF07386427650B7200315619 /* LaunchScreen.storyboard */,
 				FF07386727650B7200315619 /* Info.plist */,
 			);
 			path = general;
+			sourceTree = "<group>";
+		};
+		FF07386D27650BA400315619 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FF07385B27650B6800315619 /* SceneDelegate.swift */,
+				FF07385927650B6800315619 /* AppDelegate.swift */,
+				FF07387127651AFC00315619 /* GameVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		FF07386E27650BC800315619 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FF07386427650B7200315619 /* LaunchScreen.storyboard */,
+				FF07385F27650B6900315619 /* Main.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		FF07386F27650C0200315619 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF07385E27650B6800315619 /* ViewController.swift in Sources */,
 				FF07385A27650B6800315619 /* AppDelegate.swift in Sources */,
+				FF07387227651AFD00315619 /* GameVC.swift in Sources */,
 				FF07385C27650B6800315619 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +313,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = general/general.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF68Y4A9MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = general/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -303,6 +331,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.general";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -314,8 +343,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = general/general.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF68Y4A9MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = general/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -330,6 +361,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.general";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
