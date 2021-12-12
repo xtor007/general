@@ -20,12 +20,13 @@ class GameVC: UIViewController {
     @IBOutlet var dicesPersonImg: [UIImageView]!
     @IBOutlet var dicesComp1Img: [UIImageView]!
     @IBOutlet var dicesComp2Img: [UIImageView]!
+    @IBOutlet var diceBut: [UIButton]!
     @IBOutlet weak var nextActionBut: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
-        nextActionBut.setTitle(buttonNames[moveIndex%2], for: .selected)
+        nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
     }
 
     @IBAction func nextAction(_ sender: Any) {
@@ -45,10 +46,11 @@ class GameVC: UIViewController {
             player += 1
             round = player / 3 + 1
             if round > 1 {
+                clearColor()
                 indexesForRole = []
             }
             moveIndex += 1
-            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .selected)
+            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
         } else {
             let playerIndex = player % 3
             switch playerIndex {
@@ -58,7 +60,7 @@ class GameVC: UIViewController {
                 default: break
             }
             moveIndex += 1
-            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .selected)
+            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
         }
     }
     
@@ -67,12 +69,21 @@ class GameVC: UIViewController {
             return
         }
         let tapButton = sender as! UIButton
-        let index = Int(tapButton.subtitleLabel!.text!)!
+        let index = tapButton.tag
         if !indexesForRole.contains(index-1) {
+            tapButton.backgroundColor =  UIColor.blue
             indexesForRole.append(index-1)
+        } else {
+            tapButton.backgroundColor = UIColor.clear
+            indexesForRole.remove(at: indexesForRole.firstIndex(of: index-1)!)
         }
     }
     
+    private func clearColor() {
+        for i in 0..<5 {
+            diceBut[i].backgroundColor = UIColor.clear
+        }
+    }
     
     private func personMove() {
         for i in 0..<5 {

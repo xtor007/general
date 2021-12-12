@@ -15,6 +15,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tMl-KL-WHY">
+                                <rect key="frame" x="84" y="240" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s3P-Sv-lGa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="SRk-V7-o6M">
+                                <rect key="frame" x="212" y="240" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6Y-Ou-y0o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="e59-ie-GOi">
+                                <rect key="frame" x="340" y="240" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UoR-nu-Rta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Apf-ux-YS3">
+                                <rect key="frame" x="468" y="240" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0n-DO-eGe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6CA-Vo-6Kv">
+                                <rect key="frame" x="596" y="240" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VDZ-b6-l2x"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" id="9od-3k-Ael">
                                 <rect key="frame" x="306" y="497" width="189" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -50,10 +95,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QvN-25-R1Q">
                                 <rect key="frame" x="384" y="515" width="416" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="role the dice">
-                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="role the dice"/>
                                 <connections>
                                     <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fti-a3-JBT"/>
                                 </connections>
@@ -118,51 +162,6 @@
                                 <rect key="frame" x="139" y="108" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tMl-KL-WHY">
-                                <rect key="frame" x="84" y="240" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="1"/>
-                                <connections>
-                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s3P-Sv-lGa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="SRk-V7-o6M">
-                                <rect key="frame" x="212" y="240" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="2"/>
-                                <connections>
-                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6Y-Ou-y0o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="e59-ie-GOi">
-                                <rect key="frame" x="340" y="240" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="3"/>
-                                <connections>
-                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UoR-nu-Rta"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Apf-ux-YS3">
-                                <rect key="frame" x="468" y="240" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="4"/>
-                                <connections>
-                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0n-DO-eGe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6CA-Vo-6Kv">
-                                <rect key="frame" x="596" y="240" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="5"/>
-                                <connections>
-                                    <action selector="selectDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VDZ-b6-l2x"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.20695268017795604" green="0.86078917980194092" blue="0.0012743000026121133" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -189,6 +188,11 @@
                         <outletCollection property="dicesComp2Img" destination="WMK-dX-Gwm" collectionClass="NSMutableArray" id="QuR-Bh-oD1"/>
                         <outletCollection property="dicesComp2Img" destination="iga-5Z-Cak" collectionClass="NSMutableArray" id="RIm-6x-TJv"/>
                         <outletCollection property="dicesComp2Img" destination="7U1-DU-c4D" collectionClass="NSMutableArray" id="PAS-1f-ZQt"/>
+                        <outletCollection property="diceBut" destination="tMl-KL-WHY" collectionClass="NSMutableArray" id="hXz-6b-nff"/>
+                        <outletCollection property="diceBut" destination="SRk-V7-o6M" collectionClass="NSMutableArray" id="xxE-gb-jCW"/>
+                        <outletCollection property="diceBut" destination="e59-ie-GOi" collectionClass="NSMutableArray" id="JpY-CD-qkO"/>
+                        <outletCollection property="diceBut" destination="Apf-ux-YS3" collectionClass="NSMutableArray" id="NkP-AW-ZFX"/>
+                        <outletCollection property="diceBut" destination="6CA-Vo-6Kv" collectionClass="NSMutableArray" id="0Vt-aT-4dG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
