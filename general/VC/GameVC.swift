@@ -23,10 +23,23 @@ class GameVC: UIViewController {
     @IBOutlet var diceBut: [UIButton]!
     @IBOutlet weak var nextActionBut: UIButton!
     
+    @IBOutlet weak var nowCountP: UILabel!
+    @IBOutlet weak var nowCountC1: UILabel!
+    @IBOutlet weak var nowCountC2: UILabel!
+    @IBOutlet weak var nowCombP: UILabel!
+    @IBOutlet weak var nowCombC1: UILabel!
+    @IBOutlet weak var nowCombC2: UILabel!
+    @IBOutlet weak var sumP: UILabel!
+    @IBOutlet weak var sumC1: UILabel!
+    @IBOutlet weak var sumC2: UILabel!
+    @IBOutlet weak var raundLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
         nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
+        setEmpty()
     }
 
     @IBAction func nextAction(_ sender: Any) {
@@ -119,6 +132,18 @@ class GameVC: UIViewController {
         for i in 0..<5 {
             dicesTitleImg[i].image = dicesComp2Img[i].image
         }
+    }
+    
+    private func setEmpty() {
+        nowCountP.text = ""
+        nowCountC1.text = ""
+        nowCountC2.text = ""
+        nowCombP.text = ""
+        nowCombC1.text = ""
+        nowCombC2.text = ""
+        sumP.text = ""
+        sumC1.text = ""
+        sumC2.text = ""
     }
     
 }
