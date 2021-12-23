@@ -44,21 +44,21 @@ class Game {
         is1 = false
     }
     
-    func newRound() -> Int {
-        let max = points.max()
-        var winner: [Int] = []
-        for i in 0...2 {
-            if points[i] == max {
-                winner.append(i)
-            }
-        }
+    func newRound() {
+//        let max = points.max()
+//        var winner: [Int] = []
+//        for i in 0...2 {
+//            if points[i] == max {
+//                winner.append(i)
+//            }
+//        }
         points = [0,0,0]
         combin = ["-","-","-"]
         is1 = true
-        if winner.count == 1 {
-            return winner[0]
-        } else {
-            return -1
-        }
+//        if winner.count == 1 {
+//            return winner[0]
+//        } else {
+//            return -1
+//        }
     }
 }

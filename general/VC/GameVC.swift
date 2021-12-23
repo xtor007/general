@@ -43,6 +43,9 @@ class GameVC: UIViewController {
     @IBOutlet weak var raundLabel: UILabel!
     
     
+    @IBOutlet var movesView: [UIView]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
@@ -50,11 +53,15 @@ class GameVC: UIViewController {
         setEmpty()
         updateScore()
         raundLabel.text = "Round " + String(gameRound)
+        for i in 1...2 {
+            movesView[i].isHidden = true
+        }
     }
 
     @IBAction func nextAction(_ sender: Any) {
         if moveIndex % 2 == 0 {
             let playerIndex = player % 3
+            round = player / 3 + 1
             if round != 1 {
                 switch playerIndex {
                     case 1: indexesForRole = game.comp1MoveVal()
@@ -74,6 +81,13 @@ class GameVC: UIViewController {
                 case 2: comp2Move()
                 default: break
             }
+            clearColor()
+            moveIndex += 1
+            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
+        } else {
+            let playerIndex = player % 3
+            movesView[playerIndex].isHidden = true
+            movesView[(playerIndex+1)%3].isHidden = false
             player += 1
             round = player / 3 + 1
             if round == 4 {
@@ -83,30 +97,24 @@ class GameVC: UIViewController {
                 if gameRound == 11 {
                     isWinner()
                 }
-                let winner = game.newRound()
-                if winner != -1 {
-                    scoring[winner] += 1
+                for i in 0...2 {
+                    scoring[i] += game.points[i]
                 }
+                game.newRound()
                 updateScore()
                 setEmpty()
                 raundLabel.text = "Round " + String(gameRound)
             }
-            if round > 1 {
-                clearColor()
+            if round == 1 {
+                indexesForRole = [0,1,2,3,4]
+            } else {
                 indexesForRole = []
             }
-            moveIndex += 1
-            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
-        } else {
-            let playerIndex = player % 3
-            switch playerIndex {
-                case 0: personRep()
+            switch playerIndex+1 {
+                case 3: personRep()
                 case 1: comp1Rep()
                 case 2: comp2Rep()
                 default: break
-            }
-            if round == 1 {
-                indexesForRole = [0,1,2,3,4]
             }
             moveIndex += 1
             nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
@@ -201,6 +209,15 @@ class GameVC: UIViewController {
         nowCombP.text = ""
         nowCombC1.text = ""
         nowCombC2.text = ""
+        for i in 0..<dicesPersonImg.count {
+            dicesPersonImg[i].image = nil
+        }
+        for i in 0..<dicesComp1Img.count {
+            dicesComp1Img[i].image = nil
+        }
+        for i in 0..<dicesComp2Img.count {
+            dicesComp2Img[i].image = nil
+        }
     }
     
     private func isWinner() {
