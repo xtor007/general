@@ -9,6 +9,8 @@ import Foundation
 
 class Game {
     
+    var points = [0,0,0]
+    
     private var comp1: [Int] = []
     private var comp2: [Int] = []
     private var per: [Int] = []
