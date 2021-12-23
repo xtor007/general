@@ -13,6 +13,7 @@
 		FF07386327650B7200315619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF07386227650B7200315619 /* Assets.xcassets */; };
 		FF07386627650B7200315619 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF07386427650B7200315619 /* LaunchScreen.storyboard */; };
 		FF07387227651AFD00315619 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF07387127651AFC00315619 /* GameVC.swift */; };
+		FF86B6AA27710762005E703E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86B6A927710762005E703E /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FF07386727650B7200315619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF07387027650E5800315619 /* general.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = general.entitlements; sourceTree = "<group>"; };
 		FF07387127651AFC00315619 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		FF86B6A927710762005E703E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		FF07386F27650C0200315619 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FF86B6A927710762005E703E /* Game.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				FF07385A27650B6800315619 /* AppDelegate.swift in Sources */,
 				FF07387227651AFD00315619 /* GameVC.swift in Sources */,
 				FF07385C27650B6800315619 /* SceneDelegate.swift in Sources */,
+				FF86B6AA27710762005E703E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

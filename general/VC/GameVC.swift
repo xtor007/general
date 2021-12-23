@@ -15,6 +15,13 @@ class GameVC: UIViewController {
     var round = 1
     let buttonNames = ["Role the dice","To next player"]
     var moveIndex = 0
+    var gameRound = 1
+    
+    let game = Game()
+    
+    var values = [[0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0]]
     
     @IBOutlet var dicesTitleImg: [UIImageView]!
     @IBOutlet var dicesPersonImg: [UIImageView]!
@@ -40,16 +47,25 @@ class GameVC: UIViewController {
         self.overrideUserInterfaceStyle = .light
         nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
         setEmpty()
+        raundLabel.text = "Round " + String(gameRound)
     }
 
     @IBAction func nextAction(_ sender: Any) {
         if moveIndex % 2 == 0 {
+            let playerIndex = player % 3
+            if round != 1 {
+                switch playerIndex {
+                    case 1: indexesForRole = game.comp1MoveVal()
+                    case 2: indexesForRole = game.comp2MoveVal()
+                    default: break
+                }
+            }
             for i in indexesForRole {
                 let diceValue = Int.random(in: diceRange)
                 let imgName = String(diceValue)
                 dicesTitleImg[i].image = UIImage(named: imgName)
+                values[playerIndex][i] = diceValue
             }
-            let playerIndex = player % 3
             switch playerIndex {
                 case 0: personMove()
                 case 1: comp1Move()
@@ -57,10 +73,19 @@ class GameVC: UIViewController {
                 default: break
             }
             player += 1
-            round = player / 3 + 1
             if round > 1 {
                 clearColor()
                 indexesForRole = []
+            }
+            round = player / 3 + 1
+            if round == 4 {
+                round = 1
+                player = 0
+                gameRound += 1
+                if gameRound == 11 {
+                    isWinner()
+                }
+                raundLabel.text = "Round " + String(gameRound)
             }
             moveIndex += 1
             nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
@@ -72,13 +97,16 @@ class GameVC: UIViewController {
                 case 2: comp2Rep()
                 default: break
             }
+            if round == 1 {
+                indexesForRole = [0,1,2,3,4]
+            }
             moveIndex += 1
             nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
         }
     }
     
     @IBAction func selectDice(_ sender: Any) {
-        if round == 1 || moveIndex == 1 {
+        if round == 1 || moveIndex == 1 || player % 3 != 0 {
             return
         }
         let tapButton = sender as! UIButton
@@ -99,37 +127,55 @@ class GameVC: UIViewController {
     }
     
     private func personMove() {
+        let toGame = values[0]
         for i in 0..<5 {
             dicesPersonImg[i].image = dicesTitleImg[i].image
         }
+        game.perMove(newVal: toGame)
     }
     
     private func comp1Move() {
+        let toGame = values[1]
         for i in 0..<5 {
             dicesComp1Img[i].image = dicesTitleImg[i].image
         }
+        game.comp1Move(newVal: toGame)
     }
     
     private func comp2Move() {
+        let toGame = values[2]
         for i in 0..<5 {
             dicesComp2Img[i].image = dicesTitleImg[i].image
         }
+        game.comp2Move(newVal: toGame)
     }
     
     private func personRep() {
         for i in 0..<5 {
+            if round == 1 {
+                dicesTitleImg[i].image = nil
+                continue
+            }
             dicesTitleImg[i].image = dicesPersonImg[i].image
         }
     }
     
     private func comp1Rep() {
         for i in 0..<5 {
+            if round == 1 {
+                dicesTitleImg[i].image = nil
+                continue
+            }
             dicesTitleImg[i].image = dicesComp1Img[i].image
         }
     }
     
     private func comp2Rep() {
         for i in 0..<5 {
+            if round == 1 {
+                dicesTitleImg[i].image = nil
+                continue
+            }
             dicesTitleImg[i].image = dicesComp2Img[i].image
         }
     }
@@ -144,6 +190,10 @@ class GameVC: UIViewController {
         sumP.text = ""
         sumC1.text = ""
         sumC2.text = ""
+    }
+    
+    private func isWinner() {
+        
     }
     
 }
