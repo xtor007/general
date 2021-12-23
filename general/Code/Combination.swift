@@ -55,7 +55,7 @@ class Combination {
     }
     
     static func getPoints(comb: String, is1: Bool) -> Int {
-        let resCount = [[0,0],[60,0],[45,40],[35,30],[25,20]]
+        let resCount = [[0,0],[60,1000000],[45,40],[35,30],[25,20]]
         var combNum = 0
         switch comb {
             case "general": combNum = 1

@@ -22,6 +22,7 @@ class GameVC: UIViewController {
     var values = [[0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0]]
+    var scoring = [0,0,0]
     
     @IBOutlet var dicesTitleImg: [UIImageView]!
     @IBOutlet var dicesPersonImg: [UIImageView]!
@@ -47,6 +48,7 @@ class GameVC: UIViewController {
         self.overrideUserInterfaceStyle = .light
         nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
         setEmpty()
+        updateScore()
         raundLabel.text = "Round " + String(gameRound)
     }
 
@@ -73,10 +75,6 @@ class GameVC: UIViewController {
                 default: break
             }
             player += 1
-            if round > 1 {
-                clearColor()
-                indexesForRole = []
-            }
             round = player / 3 + 1
             if round == 4 {
                 round = 1
@@ -85,7 +83,17 @@ class GameVC: UIViewController {
                 if gameRound == 11 {
                     isWinner()
                 }
+                let winner = game.newRound()
+                if winner != -1 {
+                    scoring[winner] += 1
+                }
+                updateScore()
+                setEmpty()
                 raundLabel.text = "Round " + String(gameRound)
+            }
+            if round > 1 {
+                clearColor()
+                indexesForRole = []
             }
             moveIndex += 1
             nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
@@ -132,6 +140,8 @@ class GameVC: UIViewController {
             dicesPersonImg[i].image = dicesTitleImg[i].image
         }
         game.perMove(newVal: toGame)
+        nowCountP.text = String(game.points[0])
+        nowCombP.text = game.combin[0]
     }
     
     private func comp1Move() {
@@ -140,6 +150,8 @@ class GameVC: UIViewController {
             dicesComp1Img[i].image = dicesTitleImg[i].image
         }
         game.comp1Move(newVal: toGame)
+        nowCountC1.text = String(game.points[1])
+        nowCombC1.text = game.combin[1]
     }
     
     private func comp2Move() {
@@ -148,6 +160,8 @@ class GameVC: UIViewController {
             dicesComp2Img[i].image = dicesTitleImg[i].image
         }
         game.comp2Move(newVal: toGame)
+        nowCountC2.text = String(game.points[2])
+        nowCombC2.text = game.combin[2]
     }
     
     private func personRep() {
@@ -187,13 +201,16 @@ class GameVC: UIViewController {
         nowCombP.text = ""
         nowCombC1.text = ""
         nowCombC2.text = ""
-        sumP.text = ""
-        sumC1.text = ""
-        sumC2.text = ""
     }
     
     private func isWinner() {
         
+    }
+    
+    private func updateScore() {
+        sumP.text = String(scoring[0])
+        sumC1.text = String(scoring[1])
+        sumC2.text = String(scoring[2])
     }
     
 }
