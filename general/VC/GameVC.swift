@@ -71,8 +71,6 @@ class GameVC: UIViewController {
             }
             for i in indexesForRole {
                 let diceValue = Int.random(in: diceRange)
-//                let imgName = String(diceValue)
-//                dicesTitleImg[i].image = UIImage(named: imgName)
                 values[playerIndex][i] = diceValue
             }
             setTitleDice(forPlayer: playerIndex)
@@ -97,11 +95,11 @@ class GameVC: UIViewController {
                 round = 1
                 player = 0
                 gameRound += 1
-                if gameRound == 11 {
-                    isWinner()
-                }
                 for i in 0...2 {
                     scoring[i] += game.points[i]
+                }
+                if gameRound == 2 { //
+                    isWinner()
                 }
                 game.newRound()
                 updateScore()
@@ -113,7 +111,6 @@ class GameVC: UIViewController {
             } else {
                 indexesForRole = []
             }
-            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.56) {
             switch playerIndex+1 {
                 case 3: self.personRep()
                 case 1: self.comp1Rep()
@@ -122,7 +119,6 @@ class GameVC: UIViewController {
             }
             self.moveIndex += 1
             self.nextActionBut.setTitle(self.buttonNames[self.moveIndex%2], for: .normal)
-            //}
         }
     }
     
@@ -238,7 +234,26 @@ class GameVC: UIViewController {
     }
     
     private func isWinner() {
-        
+        let winnerView:  EndVC = storyboard?.instantiateViewController(withIdentifier: "EndVC") as! EndVC
+        winnerView.win = winner()
+        self.present(winnerView,animated: true)
+    }
+    
+    private func winner() -> String {
+        if scoring[0] >= scoring[1] {
+            if scoring[0] >= scoring[2] {
+                return "YOU WIN"
+            } else {
+                return "C2 WIN"
+            }
+        } else {
+            if scoring[1] >= scoring[2] {
+                return "C1 WIN"
+            } else {
+                return "C2 WIN"
+            }
+        }
+        return ""
     }
     
     private func updateScore() {

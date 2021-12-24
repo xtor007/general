@@ -16,6 +16,7 @@
 		FF86B6AA27710762005E703E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86B6A927710762005E703E /* Game.swift */; };
 		FF86B6AC27749B32005E703E /* Combination.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86B6AB27749B32005E703E /* Combination.swift */; };
 		FF86B6AE2774E6C4005E703E /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86B6AD2774E6C3005E703E /* Position.swift */; };
+		FF86B6B0277615D3005E703E /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86B6AF277615D2005E703E /* EndVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		FF86B6A927710762005E703E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FF86B6AB27749B32005E703E /* Combination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination.swift; sourceTree = "<group>"; };
 		FF86B6AD2774E6C3005E703E /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		FF86B6AF277615D2005E703E /* EndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				FF07385B27650B6800315619 /* SceneDelegate.swift */,
 				FF07385927650B6800315619 /* AppDelegate.swift */,
 				FF07387127651AFC00315619 /* GameVC.swift */,
+				FF86B6AF277615D2005E703E /* EndVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF86B6B0277615D3005E703E /* EndVC.swift in Sources */,
 				FF07385A27650B6800315619 /* AppDelegate.swift in Sources */,
 				FF07387227651AFD00315619 /* GameVC.swift in Sources */,
 				FF86B6AE2774E6C4005E703E /* Position.swift in Sources */,
