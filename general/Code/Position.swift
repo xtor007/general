@@ -62,7 +62,7 @@ class Position {
     
     func toRanTree(changePos: [Int]) {
         mChangePos = changePos
-        let chance = Double(changePos.count)*(1/6)
+        let chance = pow((1/6), Double(changePos.count))
         var k: [[Int]] = [[nowPos[nowPlayer][0]],[nowPos[nowPlayer][1]],[nowPos[nowPlayer][2]],[nowPos[nowPlayer][3]],[nowPos[nowPlayer][4]]]
         for i in changePos {
             k[i] = [1,2,3,4,5,6]
