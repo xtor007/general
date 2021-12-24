@@ -18,11 +18,25 @@ class Game {
     private var is1 = true
     
     func comp1MoveVal() -> [Int] {
-        return [1]
+        let pos = Position(inNowPlayer: 1, inNowPos: [per,comp1,comp2], inNowDepth: 0)
+        pos.toTree()
+        for varMove in pos.children {
+            if pos.values == varMove.values && varMove.mChangePos != nil {
+                return varMove.mChangePos!
+            }
+        }
+        return []
     }
     
     func comp2MoveVal() -> [Int] {
-        return [2,3]
+        let pos = Position(inNowPlayer: 2, inNowPos: [per,comp1,comp2], inNowDepth: 0)
+        pos.toTree()
+        for varMove in pos.children {
+            if pos.values == varMove.values && varMove.mChangePos != nil {
+                return varMove.mChangePos!
+            }
+        }
+        return []
     }
     
     func perMove(newVal: [Int]) {
