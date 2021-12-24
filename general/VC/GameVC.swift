@@ -153,6 +153,10 @@ class GameVC: UIViewController {
             dicesPersonImg[i].image = dicesTitleImg[i].image
         }
         game.perMove(newVal: toGame)
+        if game.points[0] == 70 {
+            scoring[0] = 1000000
+            isWinner()
+        }
         nowCountP.text = String(game.points[0])
         nowCombP.text = game.combin[0]
     }
@@ -163,6 +167,10 @@ class GameVC: UIViewController {
             dicesComp1Img[i].image = dicesTitleImg[i].image
         }
         game.comp1Move(newVal: toGame)
+        if game.points[1] == 70 {
+            scoring[1] = 1000000
+            isWinner()
+        }
         nowCountC1.text = String(game.points[1])
         nowCombC1.text = game.combin[1]
     }
@@ -173,6 +181,10 @@ class GameVC: UIViewController {
             dicesComp2Img[i].image = dicesTitleImg[i].image
         }
         game.comp2Move(newVal: toGame)
+        if game.points[2] == 70 {
+            scoring[2] = 1000000
+            isWinner()
+        }
         nowCountC2.text = String(game.points[2])
         nowCombC2.text = game.combin[2]
     }
