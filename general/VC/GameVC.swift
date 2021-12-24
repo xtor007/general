@@ -71,15 +71,18 @@ class GameVC: UIViewController {
             }
             for i in indexesForRole {
                 let diceValue = Int.random(in: diceRange)
-                let imgName = String(diceValue)
-                dicesTitleImg[i].image = UIImage(named: imgName)
+//                let imgName = String(diceValue)
+//                dicesTitleImg[i].image = UIImage(named: imgName)
                 values[playerIndex][i] = diceValue
             }
-            switch playerIndex {
-                case 0: personMove()
-                case 1: comp1Move()
-                case 2: comp2Move()
-                default: break
+            setTitleDice(forPlayer: playerIndex)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+                switch playerIndex {
+                    case 0: self.personMove()
+                    case 1: self.comp1Move()
+                    case 2: self.comp2Move()
+                    default: break
+                }
             }
             clearColor()
             moveIndex += 1
@@ -110,14 +113,16 @@ class GameVC: UIViewController {
             } else {
                 indexesForRole = []
             }
+            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.56) {
             switch playerIndex+1 {
-                case 3: personRep()
-                case 1: comp1Rep()
-                case 2: comp2Rep()
+                case 3: self.personRep()
+                case 1: self.comp1Rep()
+                case 2: self.comp2Rep()
                 default: break
             }
-            moveIndex += 1
-            nextActionBut.setTitle(buttonNames[moveIndex%2], for: .normal)
+            self.moveIndex += 1
+            self.nextActionBut.setTitle(self.buttonNames[self.moveIndex%2], for: .normal)
+            //}
         }
     }
     
@@ -228,6 +233,26 @@ class GameVC: UIViewController {
         sumP.text = String(scoring[0])
         sumC1.text = String(scoring[1])
         sumC2.text = String(scoring[2])
+    }
+    
+    private func setTitleDice(forPlayer: Int) {
+        for time in 0...10 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05*Double(time)) {
+                for i in self.indexesForRole {
+                    let diceValue = Int.random(in: self.diceRange)
+                    let imgName = String(diceValue)
+                    self.dicesTitleImg[i].image = UIImage(named: imgName)
+                }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            for i in self.indexesForRole {
+                let diceValue = self.values[forPlayer][i]
+                let imgName = String(diceValue)
+                self.dicesTitleImg[i].image = UIImage(named: imgName)
+            }
+            return
+        }
     }
     
 }

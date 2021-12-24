@@ -53,9 +53,6 @@ class Position {
             let child = Position(inNowPlayer: nowPlayer, inNowPos: nowPos, inNowDepth: nowDepth+1)
             children.append(child)
             children[children.count-1].toRanTree(changePos: variant)
-//            for i in 0...2 {
-//                values[i] += children[children.count-1].values[i]*chance
-//            }
             if flag || countKoef(val: values) < countKoef(val: children[children.count-1].values) {
                 values = children[children.count-1].values
                 flag = false
