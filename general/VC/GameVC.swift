@@ -98,7 +98,7 @@ class GameVC: UIViewController {
                 for i in 0...2 {
                     scoring[i] += game.points[i]
                 }
-                if gameRound == 2 { //
+                if gameRound == 11 {
                     isWinner()
                 }
                 game.newRound()
