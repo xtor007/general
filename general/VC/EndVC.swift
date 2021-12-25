@@ -19,4 +19,7 @@ class EndVC: UIViewController {
         winnerLabel.text = win
     }
 
+    @IBAction func close(_ sender: Any) {
+        exit(0)
+    }
 }

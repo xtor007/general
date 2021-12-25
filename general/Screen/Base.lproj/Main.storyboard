@@ -365,6 +365,15 @@
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1kV-vH-Syx">
+                                <rect key="frame" x="31" y="21" width="46" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="clear.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="close:" destination="aOn-Ew-SOv" eventType="touchUpInside" id="WPs-AT-iFO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0TT-q6-HCC"/>
                         <color key="backgroundColor" red="0.53843279225185525" green="1" blue="0.60270315962607124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -380,6 +389,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="comp" width="1280" height="720"/>
         <image name="person" width="910" height="1280"/>
         <namedColor name="AccentColor">
